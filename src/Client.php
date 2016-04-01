@@ -793,7 +793,7 @@ class Client
                 ? self::$_domains['development']
                 : self::$_domains['production'];
             $url .= '/';
-            $url .= ($includeVersion) ? 'v' . self::$_apiVersion . '/' : '';
+            //$url .= ($includeVersion) ? 'v' . self::$_apiVersion . '/' : '';
             $url .= $path;
         }
 
