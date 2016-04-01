@@ -774,7 +774,7 @@ class Services_Soundcloud
      *
      * @access protected
      */
-    protected function _buildUrl($path, $params = array(), $includeVersion = true)
+    protected function _buildUrl($path, $params = array(), $includeVersion = false)
     {
         if (!$this->_accessToken) {
             $params['consumer_key'] = $this->_clientId;
@@ -784,7 +784,7 @@ class Services_Soundcloud
             $url = $path;
         } else {
             $url = 'https://';
-            $url .= (!preg_match('/connect/', $path)) ? 'api.' : '';
+            $url .= (!preg_match('/connect/', $path)) ? 'api-v2.' : '';
             $url .= ($this->_development)
                 ? self::$_domains['development']
                 : self::$_domains['production'];
